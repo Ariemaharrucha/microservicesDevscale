@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+    build: ./api-gateway
+    ports:
+        - "3000:3000"
+
+
+    build: ./threads
+    ports:
+      - "8001:8001"
