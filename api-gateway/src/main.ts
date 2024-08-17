@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.use("/threads",createProxyMiddleware({
-  target: "http://localhost:8001",
+  target: "http://threads:8001",
 }))
 
 app.listen(3000, () => {
