@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cors from "cors";
 import { ThreadRoutes } from './routes/threads.routes';
 import { middleWareCheckorigin } from './middleware/threads.middleware';
 
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use(middleWareCheckorigin);
-app.use('/threads',ThreadRoutes);
+app.use('/',ThreadRoutes);
 
 mongoose.connect(process.env.MONGO_URI as string)
     .then(() => {
